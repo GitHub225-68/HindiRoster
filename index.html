@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Roster Management</title>
+  <style>
+    /* CSS styles for the website */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f8f8f8;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .roster {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .roster h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .child {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .child input,
+    .child select {
+      margin-bottom: 5px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 5px;
+    }
+    .child .guardian {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+    .child .guardian input {
+      margin-right: 5px;
+      flex-grow: 1;
+    }
+    .child .guardian button {
+      margin-left: 5px;
+    }
+    .attendance {
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+      margin-left: 10px;
+    }
+    .child button {
+      margin-left: 10px;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Roster Management</h1>
+
+  <!-- <form id="contactForm" action="https://formsubmit.co/your-email@domain" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    <input type="submit" value="Submit">
+  </form> -->
+  
+  <div id="rosters">
+    <!-- Roster 1 -->
+    <div class="roster">
+      <h2>Roster 1</h2>
+      <button onclick="addChild(this.parentNode)">Add Child</button>
+      <button onclick="removeRoster(this.parentNode)">Remove Roster</button>
+      <ul class="child-list">
+        <li class="child">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          <input type="text" placeholder="Grade">
+          <input type="text" placeholder="Room Number">
+          <input type="text" placeholder="Days Attending">
+          <input type="text" placeholder="Time Leaving">
+          <input type="text" placeholder="Parent Signature">
+          <div class="guardian" id="guardian">
+            <input type="text" placeholder="Guardian 1 Email">
+            <button onclick="deleteGuardian(this)">Delete</button>
+          </div>
+          <div class="guardian">
+            <input type="text" placeholder="Guardian 2 Email">
+            <button onclick="deleteGuardian(this)">Delete</button>
+          </div>
+          <div class="attendance">
+            <select>
+              <option value="present">Present</option>
+              <option value="absent">Absent</option>
+              <option value="excused">Excused</option>
+            </select>
+          </div>
+          <button onclick="removeRoster(this.parentNode)">Remove</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <button onclick="addRoster()">Add Roster</button>
+
+  <section class="container">
+    <div class="drawing-board">
+      <canvas id="drawing-board"></canvas>
+    </div>
+  </section>
+  
+  <script src="./script.js"></script>
+</body>
+</html>
