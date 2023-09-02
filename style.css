@@ -1,4 +1,37 @@
-html {
-  height: 100%;
+/* Reset default margin and padding for the whole page */
+body, table {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the entire table */
+table {
+  border-collapse: collapse;
   width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for table header cells */
+th {
+  background-color: #f2f2f2;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Style for table data cells */
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Style for alternating rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style for checkboxes */
+.present-checkbox {
+  transform: scale(1.5);
 }
