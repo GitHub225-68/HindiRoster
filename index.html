@@ -66,58 +66,306 @@
     button {
       margin-top: 10px;
     }
+
+    html {
+      height: 100%;
+      width: 100%;
+    }
+    
+    .time-button {
+      padding-bottom: 10%;
+      padding-right: 10%;
+    }
+    
+    .upload-label {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .upload-label input[type="file"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+        /* Reset default margin and padding for the whole page */
+    body, table {
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Style for the entire table */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      display: none;
+    }
+    
+    /* Style for table header cells */
+    th {
+      background-color: #f2f2f2;
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    /* Style for table data cells */
+    td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    /* Style for alternating rows */
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Reset default margin and padding */
+body, h1, h2, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica', Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #0056b3;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.roster {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.child-list {
+  list-style: none;
+  padding: 0;
+}
+
+.child {
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+    /* Updated button styles */
+    .add-roster-button,
+    .child button,
+    .child .guardian button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      margin-left: 10px;
+    }
+
+    .add-roster-button:hover,
+    .child button:hover,
+    .child .guardian button:hover {
+      background-color: #0056b3;
+    }
+
+    .add-button {
+      background-color: #fcca03;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      color: white;
+      padding: 5px 10px;
+    }
+
+    .add-button:hover {
+      background-color: #fcca03;
+    }
+
+    .remove-roster-button {
+      background-color: #fcca03;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      color: white;
+      padding: 5px 10px;
+    }
+
+    .remove-roster-button:hover {
+      background-color: #fcca03;
+    }
+
+    .submit-roster-button {
+      background-color: #fcca03;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      color: white;
+      padding: 5px 10px;
+    }
+
+    .submit-roster-button:hover {
+      background-color: #fcca03;
+    }
+
+.child-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 5%;
+  object-fit: cover;
+  margin-right: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.child-info {
+  flex-grow: 1;
+}
+
+.child-name {
+  font-weight: bold;
+}
+
+.child-actions {
+  display: flex;
+  align-items: center;
+}
+
+.remove-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-left: 10px;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+.add-roster-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.add-roster-button:hover {
+  background-color: #218838;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f9f9f9;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  .add-button,
+  .add-roster-button {
+    width: 100%;
+  }
+
+  .child {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .child-photo {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+    .hidden-inputs {
+  display: none;
+}
+    
   </style>
 </head>
 <body>
   <h1>Roster Management</h1>
 
-  <!-- <form id="contactForm" action="https://formsubmit.co/your-email@domain" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
-    <input type="submit" value="Submit">
-  </form> -->
-  
   <div id="rosters">
     <!-- Roster 1 -->
     <div class="roster">
       <h2>Roster 1</h2>
-      <button onclick="addChild(this.parentNode)">Add Child</button>
-      <button onclick="removeRoster(this.parentNode)">Remove Roster</button>
+      <button class="add-button" onclick="addChild(this.parentNode)">Add Child</button>
+      <button class="remove-roster-button" onclick="removeRoster(this.parentNode)">Remove Roster</button>
+            <button class="submit-roster-button" onclick="submitRoster(this.parentNode)">Submit Roster</button>
       <ul class="child-list">
-        <li class="child">
-          <input type="text" placeholder="First Name">
-          <input type="text" placeholder="Last Name">
-          <input type="text" placeholder="Grade">
-          <input type="text" placeholder="Room Number">
-          <input type="text" placeholder="Days Attending">
-          <input type="text" placeholder="Time Leaving">
-          <input type="text" placeholder="Parent Signature">
-          <div class="guardian" id="guardian">
-            <input type="text" placeholder="Guardian 1 Email">
-            <button onclick="deleteGuardian(this)">Delete</button>
-          </div>
-          <div class="guardian">
-            <input type="text" placeholder="Guardian 2 Email">
-            <button onclick="deleteGuardian(this)">Delete</button>
-          </div>
-          <div class="attendance">
-            <select>
-              <option value="present">Present</option>
-              <option value="absent">Absent</option>
-              <option value="excused">Excused</option>
-            </select>
-          </div>
-          <button onclick="removeRoster(this.parentNode)">Remove</button>
-        </li>
       </ul>
-    </div>
   </div>
+</div>
   
-  <button onclick="addRoster()">Add Roster</button>
+  <button class="add-roster-button" onclick="addRoster()">Add Roster</button>
+
+  <footer>
+    <p>&copy; 2023 Roster Management. All rights reserved.</p>
+  </footer>
 
   <section class="container">
     <div class="drawing-board">
