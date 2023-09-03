@@ -11,11 +11,11 @@ function loadRosterData() {
     var rosterList = document.getElementById("rosters");
     rosterList.innerHTML = "";
 
-    rosters.forEach(function (roster, index) {
+    rosters.forEach(function(roster, index) {
       addRoster(roster, index + 1);
       var rosterChildren = roster.children;
       var childElements = rosterList.querySelectorAll(".child");
-      rosterChildren.forEach(function (child, childIndex) {
+      rosterChildren.forEach(function(child, childIndex) {
         var childElement = childElements[childIndex];
         var imgElement = childElement.querySelector(".child-photo");
         imgElement.src = child.imgData;
@@ -50,11 +50,6 @@ function addRoster(existingRoster, rosterIndex) {
 
   const tableDataDiv = document.createElement("div");
   tableDataDiv.className = ("table_data");
-
-  // Create a <br> element
-  var lineBreak = document.createElement("br");
-  
-  tableDataDiv.appendChild(lineBreak)
 
   const table = document.createElement("table");
   console.log(rosterIndexNum)
@@ -98,13 +93,13 @@ function addRoster(existingRoster, rosterIndex) {
           var childInputs = newRoster.querySelectorAll(".child-list");
 
           // Toggle the hidden-inputs class on child inputs
-        childInputs.forEach(input => {
-          input.classList.toggle("hidden-inputs");
-        });
+          childInputs.forEach(input => {
+            input.classList.toggle("hidden-inputs");
+          });
 
           var tableContainer = document.querySelector(`#attendance-table-${clickedRosterIndex}`);
 
-        console.log(tableContainer.style.display)
+          console.log(tableContainer.style.display)
 
           var childInputs = newRoster.querySelectorAll(".child input:not(:first-child)");
           var childSelects = newRoster.querySelectorAll(".child select");
@@ -123,13 +118,13 @@ function addRoster(existingRoster, rosterIndex) {
 
           var tableContainer = document.querySelector(`#attendance-table-${clickedRosterIndex}`);
           // Toggle the display of the table
-        if (tableContainer.style.display == "block") {
-          console.log("test")
-          tableContainer.style.display = "none";
-          console.log(tableContainer.style.display)
-        } else {
-          tableContainer.style.display = "block";
-        }
+          if (tableContainer.style.display == "block") {
+            console.log("test")
+            tableContainer.style.display = "none";
+            console.log(tableContainer.style.display)
+          } else {
+            tableContainer.style.display = "block";
+          }
 
           var tableBody = tableContainer.querySelector("tbody");
           tableBody.innerHTML = "";
@@ -138,17 +133,17 @@ function addRoster(existingRoster, rosterIndex) {
           var childInputsArrayLength = childInputsArray.length / 10;
 
           for (let i = 0; i < childInputsArrayLength; i++) {
-            students.push({ 
-              firstName: childInputsArray[i*10], 
-              lastName: childInputsArray[(i*10)+1], 
-              grade: childInputsArray[(i*10)+2], 
-              room: childInputsArray[(i*10)+3], 
-              days: childInputsArray[(i*10)+4],  
-              timeLeaving: childInputsArray[(i*10)+5],
-              parentSignature: childInputsArray[(i*10)+6],
-              parentEmail1: childInputsArray[(i*10)+7],
-              parentEmail2: childInputsArray[(i*10)+8],  
-              phone: childInputsArray[(i*10)+9],
+            students.push({
+              firstName: childInputsArray[i * 10],
+              lastName: childInputsArray[(i * 10) + 1],
+              grade: childInputsArray[(i * 10) + 2],
+              room: childInputsArray[(i * 10) + 3],
+              days: childInputsArray[(i * 10) + 4],
+              timeLeaving: childInputsArray[(i * 10) + 5],
+              parentSignature: childInputsArray[(i * 10) + 6],
+              parentEmail1: childInputsArray[(i * 10) + 7],
+              parentEmail2: childInputsArray[(i * 10) + 8],
+              phone: childInputsArray[(i * 10) + 9],
               attendance: childAttendanceValues[i],
             });
           }
@@ -178,14 +173,14 @@ function addRoster(existingRoster, rosterIndex) {
 
 function populateExistingChildren(children) {
   var childListHTML = "";
-  children.forEach(function (child) {
+  children.forEach(function(child) {
     var guardianEmail1 = child.guardians && child.guardians.length > 0 ? child.guardians[0].email : "";
     var guardianEmail2 = child.guardians && child.guardians.length > 1 ? child.guardians[1].email : "";
 
     childListHTML += `
       <li class="child">
         <input type="file" accept="image/*" onchange="uploadPhoto(this)">
-        <img class="child-photo" src="${child.imgData || ''}" alt="">
+        <img class="child-photo" src="${child.imgData || ''}" alt="" style="display: none;">
         <input type="text" placeholder="First Name" value="${child.firstName}">
         <input type="text" placeholder="Last Name" value="${child.lastName}">
         <input type="text" placeholder="Grade" value="${child.grade}">
@@ -203,7 +198,7 @@ function populateExistingChildren(children) {
             <option value="excused" ${child.attendance === 'excused' ? 'selected' : ''}>Excused</option>
           </select>
         </div>
-        <button onclick="removeRoster(this.parentNode)">Remove</button>
+        <button class="remove-button" onclick="removeRoster(this.parentNode)">Remove</button>
       </li>
     `;
 
@@ -228,7 +223,7 @@ function addChild(roster) {
   newChild.classList.add("child");
   newChild.innerHTML = `
     <input type="file" accept="image/*" onchange="uploadPhoto(this)">
-    <img class="child-photo" src="" alt="">
+    <img class="child-photo" src="" alt="" style="display: none;">
     <input type="text" placeholder="First Name">
     <input type="text" placeholder="Last Name">
     <input type="text" placeholder="Grade">
@@ -246,7 +241,7 @@ function addChild(roster) {
         <option value="excused">Excused</option>
       </select>
     </div>
-    <button onclick="removeRoster(this.parentNode)">Remove</button>
+    <button class="remove-button" onclick="removeRoster(this.parentNode)">Remove</button>
   `;
   // Place the child element with image at the top
   childList.insertBefore(newChild, childList.firstChild);
@@ -260,32 +255,32 @@ function removeChild(child) {
   console.log("hello")
 }
 
-    function deleteGuardian(guardian) {
-      var guardiansList = guardian.parentNode;
-      guardiansList.removeChild(guardian);
-    }
+function deleteGuardian(guardian) {
+  var guardiansList = guardian.parentNode;
+  guardiansList.removeChild(guardian);
+}
 
-    function removeRoster(roster) {
-      var rosterList = roster.parentNode;
-      rosterList.removeChild(roster);
-    }
+function removeRoster(roster) {
+  var rosterList = roster.parentNode;
+  rosterList.removeChild(roster);
+}
 
-    window.onbeforeunload = function () {
-      saveRosterData();
-    };
+window.onbeforeunload = function() {
+  saveRosterData();
+};
 
-    function saveRosterData() {
+function saveRosterData() {
   var rosterList = document.getElementById("rosters");
   var rosters = rosterList.querySelectorAll(".roster");
   var rosterData = [];
-  rosters.forEach(function (roster) {
+  rosters.forEach(function(roster) {
     var children = roster.querySelectorAll(".child");
     var rosterChildren = [];
-    children.forEach(function (child) {
+    children.forEach(function(child) {
       var imgElement = child.querySelector(".child-photo");
       var imgData = imgElement.src; // Save image data
       var imgWidth = parseInt(imgElement.style.width) || 0;  // Store the width
-    var imgHeight = parseInt(imgElement.style.height) || 0; // Store the height
+      var imgHeight = parseInt(imgElement.style.height) || 0; // Store the height
       var firstName = child.querySelector("input:nth-of-type(2)").value;
       console.log(firstName)
       var lastName = child.querySelector("input:nth-of-type(3)").value;
@@ -356,6 +351,9 @@ function uploadPhoto(input) {
       childPhoto.style.width = width + "px";
       childPhoto.style.height = height + "px";
 
+      // Show the image preview
+      childPhoto.style.display = "block";
+
       // Save image data and dimensions
       saveRosterData();
     };
@@ -363,6 +361,9 @@ function uploadPhoto(input) {
 
   if (file) {
     reader.readAsDataURL(file);
+  } else {
+    // Hide the image preview when no image is selected
+    childPhoto.style.display = "none";
   }
 }
 
@@ -407,42 +408,48 @@ function uploadPhoto(input) {
 // canvas.addEventListener('mousemove', draw);
 
 function submitRoster(roster) {
-    var guardianEmailInputs = roster.querySelectorAll("input:nth-of-type(9)");
+  var guardianEmailInputs = roster.querySelectorAll("input:nth-of-type(9)");
 
-    //Loop through each guardian input and send a separate form submission
-    guardianEmailInputs.forEach(function(input) {
-        var userEmail = input.value.trim();
+  //Loop through each guardian input and send a separate form submission
+  guardianEmailInputs.forEach(function(input) {
+    var userEmail = input.value.trim();
 
-        // Skip empty email inputs
-        if (userEmail !== "") {
-            // Get the associated child's attendance
-            var attendanceSelect = input.closest(".child").querySelector(".attendance select");
-            var firstName = input.closest(".child").querySelector("input:nth-of-type(2)").value;
-            var attendance = attendanceSelect.value;
+    // Skip empty email inputs
+    if (userEmail !== "") {
+      // Get the associated child's attendance
+      var attendanceSelect = input.closest(".child").querySelector(".attendance select");
+      var firstName = input.closest(".child").querySelector("input:nth-of-type(2)").value;
+      var attendance = attendanceSelect.value;
 
-            // Build the attendance message
-            var message = `${firstName} was ${attendance} in class today.`;
+      // Build the attendance message
+      var message = `${firstName} was ${attendance} in class today.`;
 
-            // Create a form submission for each email
-            var form = document.createElement("form");
-            form.method = "POST";
-            form.action = "https://formsubmit.co/" + userEmail;
-            form.target = "_blank"; // Open the submission in a new tab
+      // Create a form submission for each email
+      var form = document.createElement("form");
+      form.method = "POST";
+      form.action = "https://formsubmit.co/" + userEmail;
+      form.target = "_blank"; // Open the submission in a new tab
 
-            // Add a hidden input field to include the attendance message
-            var messageInput = document.createElement("input");
-            messageInput.type = "hidden";
-            messageInput.name = "Attendance";
-            messageInput.value = message;
+      // Add a hidden input field to include the attendance message
+      var messageInput = document.createElement("input");
+      messageInput.type = "hidden";
+      messageInput.name = "Attendance";
+      messageInput.value = message;
 
-            form.appendChild(messageInput);
+      form.appendChild(messageInput);
 
-            // Submit the form
-            document.body.appendChild(form);
-            form.submit();
+      // Submit the form
+      document.body.appendChild(form);
+      form.submit();
 
-            // Remove the form after submission
-            document.body.removeChild(form);
-        }
-    });
+      // Remove the form after submission
+      document.body.removeChild(form);
+    }
+  });
 }
+
+// Get a reference to the audio element
+var audio = document.getElementById("backgroundMusic");
+
+// Set the volume (0.5 for 50% volume)
+audio.volume = 0.015;
