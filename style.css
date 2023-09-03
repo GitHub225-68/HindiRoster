@@ -1,5 +1,428 @@
+/* CSS styles for the website */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.roster {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.roster h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.child {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.child input,
+.child select {
+  margin-bottom: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.child .guardian {
+  display: flex;
+  align-items: center;
+}
+
+.child .guardian input {
+  margin-right: 5px;
+  flex-grow: 1;
+}
+
+.attendance {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  border-radius: 10%;
+}
+
+button {
+  margin-top: 10px;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.time-button {
+  padding-bottom: 10%;
+  padding-right: 10%;
+}
+
+.upload-label {
+  position: relative;
+  display: inline-block;
+}
+
+.upload-label input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
 /* Reset default margin and padding for the whole page */
-body, table {
+body,
+table {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the entire table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  display: none;
+}
+
+/* Style for table header cells */
+th {
+  background-color: #f2f2f2;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Style for table data cells */
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Style for alternating rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Reset default margin and padding */
+body,
+h1,
+h2,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica', Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #0056b3;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.roster {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.child-list {
+  list-style: none;
+  padding: 0;
+}
+
+.child {
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Updated button styles */
+.add-roster-button,
+.child button,
+.child .guardian button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.add-roster-button:hover,
+.child button:hover,
+.child .guardian button:hover {
+  background-color: #0056b3;
+}
+
+.add-button {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  color: white;
+  padding: 5px 10px;
+}
+
+.add-button:hover {
+  background-color: #218838;
+}
+
+.remove-roster-button {
+  background-color: #dc3545;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  color: white;
+  padding: 5px 10px;
+}
+
+.remove-roster-button:hover {
+  background-color: #c82333;
+}
+
+.submit-roster-button {
+  background-color: #fcca03;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  color: white;
+  padding: 5px 10px;
+}
+
+.submit-roster-button:hover {
+  background-color: #fcca03;
+}
+
+.child-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 5%;
+  object-fit: cover;
+  margin-right: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.child-info {}
+
+.child-name {
+  font-weight: bold;
+}
+
+.child-actions {
+  display: flex;
+  align-items: center;
+}
+
+.add-roster-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.add-roster-button:hover {
+  background-color: #218838;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f9f9f9;
+  font-weight: bolder;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  .add-button,
+  .add-roster-button {
+    width: 100%;
+  }
+
+  .child {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .child-photo {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.child button {
+  font-weight: bold;
+}
+
+.upload-label {
+  position: relative;
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.upload-label input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+input::-webkit-file-upload-button {
+  position: relative;
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-weight: bold;
+  font-family: 'Roboto', Roboto;
+}
+
+input::-webkit-file-upload-button input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.hidden-inputs {
+  display: none;
+}
+
+/* Apply monospace font to body */
+body {
+  font-family: 'Roboto', Roboto;
+}
+
+/* Apply monospace font to specific elements like buttons, inputs, and selects */
+button,
+input,
+select,
+textarea,
+table {
+  font-family: 'Roboto', Roboto;
+}
+
+table {
+  font-weight: bold;
+}
+
+/* Style for the background element behind h1 */
+.background-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(to bottom, #1C6EA4, #1C8A99, #f9f9f9);
+  /* Turquoise gradient */
+  z-index: -1;
+  /* Place the background behind other content */
+}
+
+/* Style for the h1 */
+h1 {
+  text-align: center;
+  margin-bottom: 1.25%;
+  position: relative;
+  /* Create a stacking context for z-index to work */
+  z-index: 1;
+  /* Ensure the h1 appears on top of the background */
+  margin-top: 1.25%;
+  color: white;
+  /* Text color for h1 */
+}
+
+/* Reset default margin and padding for the whole page */
+body,
+table {
   margin: 0;
   padding: 0;
 }
@@ -34,4 +457,245 @@ tr:nth-child(even) {
 /* Style for checkboxes */
 .present-checkbox {
   transform: scale(1.5);
+}
+
+/* Reset default margin and padding for the whole page */
+body,
+table {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #0056b3;
+}
+
+/* Main content styles */
+.roster {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.roster:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.child-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f9f9f9;
+  font-weight: bolder;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  .add-button,
+  .remove-roster-button,
+  .submit-roster-button,
+  .add-roster-button {
+    width: 100%;
+  }
+}
+
+/* Reset default margin and padding for the whole page */
+body,
+table {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Global styles */
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  transition: color 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #0056b3;
+}
+
+/* Main content styles */
+.roster {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.roster:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.child-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Button styles */
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #f9f9f9;
+  font-weight: 600;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 32px;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+
+  .button {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  /* Add rounded corners to the table */
+  overflow: hidden;
+  /* Hide overflowing content within the rounded table */
+  margin-top: 2%;
+  /* Adjust the margin-top value as needed for the desired spacing */
+}
+
+.child-list {
+  margin-top: 2%;
+  /* Adjust the margin-top value as needed for the desired spacing */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#rosters {
+  flex-grow: 1;
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+footer {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 10px 0;
 }
